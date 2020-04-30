@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git ca-certificates wget unzip python python-openssl iputils-ping iproute2 \
     scons pkg-config ruby-full build-essential zlib1g-dev
 
+RUN apt-get install -y --no-install-recommends vim
 
 # Add a standard user and switch to user context
 ENV USER="user"
@@ -36,9 +37,15 @@ RUN echo '# Install Ruby Gems to ~/gems' >> /home/$USER/.bashrc && \
 
 USER $USER
 
-RUN /bin/bash -c "GEM_HOME=/home/$USER/gems gem install bundler"
-RUN /bin/bash -c "GEM_HOME=/home/$USER/gems gem install jekyll -v 3.8.5"
+RUN GEM_HOME=/home/$USER/gems gem install bundler
+
+ADD Gemfile /home/$USER/Gemfile
+
+WORKDIR /home/$USER
+
+RUN pwd ; GEM_HOME=/home/$USER/gems /home/$USER/gems/bin/bundler install
 
 WORKDIR /home/$USER/work
 
 CMD /bin/bash
+
