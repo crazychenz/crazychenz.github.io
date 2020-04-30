@@ -1,35 +1,117 @@
-# Jekyll configuration
+title: CrazyChenz Things
+subtitle: DevJournal & Engineering Notebooks
+#description: >- # this means to ignore newlines until "baseurl:"
+#  devlopr-jekyll is a Jekyll Theme Built For Developers
 
-name: CrazyChenz
-description: CrazyChenz Things
+url: "https://crazychenz.github.io" # the base hostname & protocol for your site, e.g. https://example.github.io
+baseurl: "" # the subpath of your site, e.g. /blog
 
-# url is currently only used only for the RSS feed in feed.xml
-#url: http://localhost:4000
-url: http://crazychenz.github.io
+urls:
+    - text: Blog
+      url: /
+    - text: Archive
+      url: /archive
+    - text: About Me
+      url: /about/
+    - text: Contact Me
+      url : /contact/
+#    - text: Styleguide
+#      url: /styleguide/
 
-# baseurl will often be '', but for a project page on gh-pages, it needs to
-# be the project name.
-# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
-#     run it like so: jekyll serve --baseurl=''
-baseurl: ''
-## default date_format
 date_format: 
   title: "%B-%-d-%Y"
   archive: "%b-%-d"
   categories: "%b-%Y"
   tag: "%b-%Y"
-# Language
-lan: "en" 
 
-paginate: 10
+# Edit these details 
 
-highlighter: rouge
+author_logo: profile.png
+author: CrazyChenz
+author_bio: Things and stuff about me.
+author_email: "crazychenz@gmail.com"
+author_location: Maryland, US
+author_website_url: "http://crazychenz.github.io"
+
+author_work_experiences: []
+#  - company_name: Google
+#    company_logo: google.png
+#    company_url: https://google.com
+#    designation: Software Engineer
+#    description: Worked on various Google Products
+#    visibility: true
+
+author_education_details: []
+#  - college_logo: mit.png
+#    college_name: MIT
+#    college_url: https://mit.org
+#    college_degree: CS Engineer
+#    description: Bachelor of Technology
+#    visibility: true
+
+author_project_details:
+  - project_thumbnail: pottytime.png
+    project_title: Potty Time
+    project_description: >-
+      A simple game developed for a graduate course of mine. Primarily a playground for 
+      experimenting different game architectures, designs, publishing, and automation.
+    project_url: https://github.com/crazychenz/potty
+    visibility: true
+  - project_thumbnail: cafe.png
+    project_title: Cafe
+    project_description: A board game life simulator.
+    #project_url: https://programmingebooks.com
+    visibility: true
+
+# social links
+#twitter_username: johndoe
+github_username:  crazychenz
+#facebook_username: johndoe
+#linkedin_username: johndoe
+#behance_username: johndoe
+#instagram_username: johndoe
+#medium_username: johndoe
+#telegram_username: johndoe
+#dribbble_username: johndoe
+#flickr_username: johndoe
+
+#for comments using disqus
+#disqus_shortname: sujay-kundu  
+
+# wakatime username
+#wakatime_username: sujaykundu777
+
+# syntax highlighter
 markdown: kramdown
-gems: ['jekyll-paginate']
 
-exclude: 
- - 'README.md'
- - 'LICENSE'
- - "*.bak"
- - 'docker'
- - 'serve.sh'
+# google analytics
+google_analytics: UA-165092016-1
+
+# Choose what to show ( can be true or false)
+show_author_work_experiences: false
+show_author_education_details: false
+show_author_project_details: true
+
+# dont touch this unless required
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# pagination of posts
+paginate: 8
+per_page: 4
+paginate_path: "/page/:num/"
+
+# minify 
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']
+
+
+
