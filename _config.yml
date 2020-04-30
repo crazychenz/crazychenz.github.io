@@ -1,43 +1,34 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Jekyll configuration
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: CrazyChenz Things
-email: crazychenz@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Currently, this is just a spot to host my dev journal and engineering notebooks.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username: jekyllrb
-#github_username:  jekyll
+name: CrazyChenz
+description: CrazyChenz Things
 
-# Build settings
+# url is currently only used only for the RSS feed in feed.xml
+url: http://localhost:4000
+
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: ''
+## default date_format
+date_format: 
+  title: "%B-%-d-%Y"
+  archive: "%b-%-d"
+  categories: "%b-%Y"
+  tag: "%b-%Y"
+# Language
+lan: "en" 
+
+paginate: 10
+
+highlighter: rouge
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+gems: ['jekyll-paginate']
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-exclude:
-  - clutter
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
+exclude: 
+ - 'README.md'
+ - 'LICENSE'
+ - "*.bak"
+ - 'docker'
+ - 'serve.sh'
