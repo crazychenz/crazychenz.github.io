@@ -7,16 +7,24 @@ url: "https://crazychenz.github.io" # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog
 
 urls:
-    - text: Blog
+    - text: Journal
       url: /
     - text: Archive
       url: /archive
-    - text: About Me
-      url: /about/
-    - text: Contact Me
-      url : /contact/
+    - text: Tags
+      url: /blog/tags
+      #- text: Me
+      #url: /about/
+      #- text: Contact
+      #url : /contact/
 #    - text: Styleguide
 #      url: /styleguide/
+
+sidebar_links:
+  - text: Google
+    href: https://google.com
+  - text: Godot
+    href: https://godotengine.org
 
 date_format: 
   title: "%B-%-d-%Y"
