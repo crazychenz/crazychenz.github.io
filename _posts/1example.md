@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "WSL Time Sync"
+title: ""
 date: 2020-04-30 00:00:00 +0000
-categories:
+tags:
 ---
 
 # 2020/04/30
