@@ -1,0 +1,6 @@
+{% for link in site.sidebar_links %}
+<div id="#{{ tag_name | slugize }}"></div>
+<li class="tag-head">
+    <a href="{{ link.href }}">{{ link.text }}</a>
+</li>
+{% endfor %}
